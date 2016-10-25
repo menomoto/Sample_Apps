@@ -9,3 +9,4 @@ Sample of ios calculator　（ no storyboard, use PureLayout )
 Sample of use Yahoo Auctions API　（ no storyboard, use PureLayout )
  - categoryTree API
  - categoryLeaf API
+ ![image](http://i.imgur.com/g8elfOH.gif)
