@@ -1,7 +1,7 @@
 import UIKit
 
 enum Urls: String {
-    case iosRanking = "https://itunes.apple.com/jp/rss/topfreeapplications/limit=100/json"
+    case appRanking = "https://itunes.apple.com/jp/rss/topfreeapplications/limit=30/json"
 }
 
 // MARK: - ApiClient
