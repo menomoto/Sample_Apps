@@ -1,7 +1,8 @@
 import UIKit
 
 enum Urls: String {
-    case iosRanking = "https://itunes.apple.com/jp/rss/topfreeapplications/limit=100/json"
+    case category = "https://auctions.yahooapis.jp/AuctionWebService/V2/json/categoryTree?appid=dj0zaiZpPU1aMWppaDVwUFFSTSZzPWNvbnN1bWVyc2VjcmV0Jng9MTc-&category="
+    case search = "https://auctions.yahooapis.jp/AuctionWebService/V2/json/categoryLeaf?appid=dj0zaiZpPU1aMWppaDVwUFFSTSZzPWNvbnN1bWVyc2VjcmV0Jng9MTc-&results=20&category="
 }
 
 // MARK: - ApiClient
