@@ -1,12 +1,10 @@
 struct Constants
 {
-    static let apiKey = "AIzaSyA91FLLE9OEHWGIu45BuQkt3s6xTzjD24M"
+    static let apiKey = "<Your API Key>"
     
     static let searchUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&key=\(Constants.apiKey)&q="
     
-    static let userDefaultKey = "favoriteVideos"
-    
-    static let dramaAppName = [
+    static let gameAppName = [
         "ウォーキング・デッド",
         "24 Twenty Four",
         "LOST",
