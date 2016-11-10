@@ -21,7 +21,6 @@
 		BA7FFE821DBE29500088027C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7FFE811DBE29500088027C /* Note.swift */; };
 		BA7FFE861DBE2D930088027C /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7FFE851DBE2D930088027C /* SwiftyJSON.framework */; };
 		BA879C511DD0A61A002C3871 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA879C501DD0A61A002C3871 /* ListViewController.swift */; };
-		BA879C531DD0A759002C3871 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA879C521DD0A759002C3871 /* Constants.swift */; };
 		BA879C591DD0B8B0002C3871 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA879C581DD0B8B0002C3871 /* WebImage.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +51,6 @@
 		BA7FFE811DBE29500088027C /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		BA7FFE851DBE2D930088027C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		BA879C501DD0A61A002C3871 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		BA879C521DD0A759002C3871 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA879C581DD0B8B0002C3871 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				BA7FFE811DBE29500088027C /* Note.swift */,
-				BA879C521DD0A759002C3871 /* Constants.swift */,
 				BA6CCB231DD34997009D87FE /* NotesManager.swift */,
 			);
 			path = Components;
@@ -312,7 +309,6 @@
 				BA6CCB241DD34997009D87FE /* NotesManager.swift in Sources */,
 				BA06B9281DAFA7B9005D680E /* main.swift in Sources */,
 				BA7FFE821DBE29500088027C /* Note.swift in Sources */,
-				BA879C531DD0A759002C3871 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
