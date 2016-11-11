@@ -5,15 +5,20 @@ class NotesManager {
     let userDefaults = NSUserDefaults.standardUserDefaults()
     let userDefaultKey = "notes"
 
-    func get() -> [Note] {
-
-        var saveNotes: Dictionary<String, String> = [:]
-        
-        if let resultNotes = userDefaults.dictionaryForKey(userDefaultKey) as? Dictionary<String, String> {
-            saveNotes = resultNotes
+    func search(query: String) -> [Note] {
+        let notes = get()
+        if query.isEmpty {
+            return notes
         }
         
-        return convertNotes(saveNotes)
+        var matchNotes: [Note] = []
+        for note in notes {
+            if note.memo.localizedCaseInsensitiveContainsString(query) {
+                matchNotes.append(note)
+            }
+        }
+        
+        return matchNotes
     }
     
     func save(note: Note) {
@@ -40,6 +45,17 @@ class NotesManager {
                 save(note)
             }
         }
+    }
+    
+    private func get() -> [Note] {
+        
+        var saveNotes: Dictionary<String, String> = [:]
+        
+        if let resultNotes = userDefaults.dictionaryForKey(userDefaultKey) as? Dictionary<String, String> {
+            saveNotes = resultNotes
+        }
+        
+        return convertNotes(saveNotes)
     }
     
     private func allDelete() {

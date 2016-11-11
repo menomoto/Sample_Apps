@@ -7,6 +7,7 @@ class ListViewController: UIViewController {
     var notes: [Note] = []
     
     // MARK: - View Elements
+    let searchBar: UISearchBar
     let tableView: UITableView
     let footerView: UIView
     let newButton: UIButton
@@ -16,6 +17,7 @@ class ListViewController: UIViewController {
     init(
         ) {
         
+        self.searchBar = UISearchBar.newAutoLayoutView()
         self.tableView = UITableView.newAutoLayoutView()
         self.footerView = UIView.newAutoLayoutView()
         self.newButton = UIButton(type: .System)
@@ -34,6 +36,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.whiteColor()
+        searchBar.becomeFirstResponder()
         
         configureNavigationBar()
         addSubviews()
@@ -52,6 +55,7 @@ class ListViewController: UIViewController {
     }
     
     private func addSubviews() {
+        view.addSubview(searchBar)
         view.addSubview(tableView)
         view.addSubview(footerView)
         footerView.addSubview(newButton)
@@ -59,6 +63,7 @@ class ListViewController: UIViewController {
     }
     
     private func configureSubviews() {
+        searchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerClass(
@@ -81,7 +86,14 @@ class ListViewController: UIViewController {
     }
     
     private func addConstraints() {
-        tableView.autoPinEdgesToSuperviewEdges()
+        searchBar.autoPinToTopLayoutGuideOfViewController(self, withInset: 0)
+        searchBar.autoPinEdgeToSuperviewEdge(.Left)
+        searchBar.autoPinEdgeToSuperviewEdge(.Right)
+
+        tableView.autoPinEdge(.Top, toEdge: .Bottom, ofView: searchBar)
+        tableView.autoPinEdgeToSuperviewEdge(.Left)
+        tableView.autoPinEdgeToSuperviewEdge(.Right)
+        tableView.autoPinEdgeToSuperviewEdge(.Bottom)
         
         footerView.autoPinEdgeToSuperviewEdge(.Left)
         footerView.autoPinEdgeToSuperviewEdge(.Right)
@@ -96,12 +108,14 @@ class ListViewController: UIViewController {
     }
     
     private func request() {
-        let notesManager = NotesManager()
-        notes = notesManager.get()
+        if let query = searchBar.text {
+            let notesManager = NotesManager()
+            notes = notesManager.search(query)
         
-        countLabel.text = "\(notes.count) Notes"
+            countLabel.text = "\(notes.count) Notes"
         
-        tableView.reloadData()
+            tableView.reloadData()
+        }
     }
     
     @objc private func didTapNewButton(sender: UIButton) {
@@ -114,6 +128,13 @@ class ListViewController: UIViewController {
     
 }
 
+// MARK: - UISearchBarDelegate
+extension ListViewController: UISearchBarDelegate
+{
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        request()
+    }
+}
 
 // MARK: - UITableViewDataSource
 extension ListViewController: UITableViewDataSource {
