@@ -15,13 +15,10 @@
 		BA06B9261DAFA701005D680E /* notesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06B9221DAFA701005D680E /* notesTests.swift */; };
 		BA06B9281DAFA7B9005D680E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA06B9271DAFA7B9005D680E /* main.swift */; };
 		BA06B92B1DAFA88E005D680E /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA06B92A1DAFA88E005D680E /* PureLayout.framework */; };
-		BA53BD551DC8DBCC00789CC6 /* YouTubeiOSPlayerHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA53BD541DC8DBCC00789CC6 /* YouTubeiOSPlayerHelper.framework */; };
 		BA5D730A1DD49102005C8E38 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5D73091DD49102005C8E38 /* NoteViewController.swift */; };
 		BA6CCB241DD34997009D87FE /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6CCB231DD34997009D87FE /* NotesManager.swift */; };
 		BA7FFE821DBE29500088027C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7FFE811DBE29500088027C /* Note.swift */; };
-		BA7FFE861DBE2D930088027C /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7FFE851DBE2D930088027C /* SwiftyJSON.framework */; };
 		BA879C511DD0A61A002C3871 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA879C501DD0A61A002C3871 /* ListViewController.swift */; };
-		BA879C591DD0B8B0002C3871 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA879C581DD0B8B0002C3871 /* WebImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,13 +42,10 @@
 		BA06B9221DAFA701005D680E /* notesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notesTests.swift; sourceTree = "<group>"; };
 		BA06B9271DAFA7B9005D680E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BA06B92A1DAFA88E005D680E /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
-		BA53BD541DC8DBCC00789CC6 /* YouTubeiOSPlayerHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YouTubeiOSPlayerHelper.framework; path = Carthage/Build/iOS/YouTubeiOSPlayerHelper.framework; sourceTree = "<group>"; };
 		BA5D73091DD49102005C8E38 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		BA6CCB231DD34997009D87FE /* NotesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesManager.swift; sourceTree = "<group>"; };
 		BA7FFE811DBE29500088027C /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		BA7FFE851DBE2D930088027C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		BA879C501DD0A61A002C3871 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		BA879C581DD0B8B0002C3871 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA879C591DD0B8B0002C3871 /* WebImage.framework in Frameworks */,
-				BA53BD551DC8DBCC00789CC6 /* YouTubeiOSPlayerHelper.framework in Frameworks */,
-				BA7FFE861DBE2D930088027C /* SwiftyJSON.framework in Frameworks */,
 				BA06B92B1DAFA88E005D680E /* PureLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,9 +162,6 @@
 		BA06B9291DAFA88E005D680E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BA879C581DD0B8B0002C3871 /* WebImage.framework */,
-				BA53BD541DC8DBCC00789CC6 /* YouTubeiOSPlayerHelper.framework */,
-				BA7FFE851DBE2D930088027C /* SwiftyJSON.framework */,
 				BA06B92A1DAFA88E005D680E /* PureLayout.framework */,
 			);
 			name = Frameworks;
@@ -286,9 +274,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/YouTubeiOSPlayerHelper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
 			);
 			outputPaths = (
 			);
