@@ -64,6 +64,8 @@ class ListViewController: UIViewController {
     
     private func configureSubviews() {
         searchBar.delegate = self
+        searchBar.showsCancelButton = true
+
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerClass(
@@ -133,6 +135,16 @@ extension ListViewController: UISearchBarDelegate
 {
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         request()
+    }
+    
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        searchBar.showsCancelButton = true
+        return true
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
     }
 }
 
