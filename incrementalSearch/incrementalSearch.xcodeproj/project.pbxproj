@@ -20,6 +20,7 @@
 		BA7FFE821DBE29500088027C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7FFE811DBE29500088027C /* Note.swift */; };
 		BA879C511DD0A61A002C3871 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA879C501DD0A61A002C3871 /* ListViewController.swift */; };
 		BAA0F27F1DD6001E00E87A1F /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA0F27E1DD6001E00E87A1F /* NSDateExtensions.swift */; };
+		D741EA411DDAE4A8006FDE82 /* ViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741EA401DDAE4A8006FDE82 /* ViewControllerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BA879C501DD0A61A002C3871 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		BA879C581DD0B8B0002C3871 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		BAA0F27E1DD6001E00E87A1F /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
+		D741EA401DDAE4A8006FDE82 /* ViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerTest.swift; path = incrementalSearchTests/Application/ViewControllerTest.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		BA06B9241DAFA701005D680E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D741EA401DDAE4A8006FDE82 /* ViewControllerTest.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D741EA411DDAE4A8006FDE82 /* ViewControllerTest.swift in Sources */,
 				BA06B9261DAFA701005D680E /* incrementalSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
