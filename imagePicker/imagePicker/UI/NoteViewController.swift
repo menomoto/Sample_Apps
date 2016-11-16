@@ -62,7 +62,9 @@ class NoteViewController: UIViewController {
 
     private func configureSubviews() {
         memoTextView.text = note.id.isEmpty ? "" : note.memo
-        memoTextView.becomeFirstResponder()
+        if note.image.size.width > 0 {
+            attachImageTextView(note.image)
+        }
         memoTextView.scrollEnabled = true
     }
 
@@ -87,7 +89,7 @@ class NoteViewController: UIViewController {
         guard let width = attachment.image?.size.width,
             let scaleImage = image.CGImage else { return }
         
-        let scale = width / (memoTextView.frame.size.width - 10)
+        let scale = width / (UIScreen.mainScreen().bounds.width - 10)
 
         attachment.image = UIImage(
             CGImage: scaleImage,

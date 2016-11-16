@@ -22,14 +22,16 @@ class NotesManager {
     }
     
     func save(note: Note) {
-        var saveNotes: Dictionary<String, String> = [:]
+        var saveNotes: Dictionary<String, AnyObject> = [:]
         
-        if let resultNotes = userDefaults.dictionaryForKey(userDefaultKey) as? Dictionary<String, String> {
+        if let resultNotes = userDefaults.objectForKey(userDefaultKey) as? Dictionary<String, AnyObject> {
             saveNotes = resultNotes
         }
         
-        let imageData = UIImagePNGRepresentation(note.image)
-        saveNotes[note.id] = note.memo
+        var addNotes: Dictionary<String, AnyObject> = [:]
+        addNotes["text"] = note.memo
+        addNotes["image"] = UIImageJPEGRepresentation(note.image, 0.25)
+        saveNotes[note.id] = addNotes
         
         userDefaults.setObject(
             saveNotes,
@@ -50,9 +52,9 @@ class NotesManager {
     
     private func get() -> [Note] {
         
-        var saveNotes: Dictionary<String, String> = [:]
+        var saveNotes: Dictionary<String, AnyObject> = [:]
         
-        if let resultNotes = userDefaults.dictionaryForKey(userDefaultKey) as? Dictionary<String, String> {
+        if let resultNotes = userDefaults.objectForKey(userDefaultKey) as? Dictionary<String, AnyObject> {
             saveNotes = resultNotes
         }
         
@@ -63,7 +65,7 @@ class NotesManager {
         userDefaults.removeObjectForKey(userDefaultKey)
     }
     
-    private func convertNotes(dictionary: Dictionary<String, String>) -> [Note] {
+    private func convertNotes(dictionary: Dictionary<String, AnyObject>) -> [Note] {
         var notes: [Note] = []
         
         let sortedNotes = dictionary.sort { $0.0 > $1.0 }
@@ -72,8 +74,13 @@ class NotesManager {
             
             var note = Note()
             note.id = key
-            note.memo = value
-            
+            if let memo = value["text"] as? String {
+                note.memo = memo
+            }
+            if let imageData = value["image"] as? NSData,
+                let image = UIImage(data: imageData) {
+                note.image = image
+            }
             notes.append(note)
         }
 

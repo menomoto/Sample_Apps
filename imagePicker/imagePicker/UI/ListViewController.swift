@@ -162,6 +162,9 @@ extension ListViewController: UITableViewDataSource {
         )
 
         cell.textLabel?.text = notes[indexPath.row].memo
+        let imageView = UIImageView(image: notes[indexPath.row].image)
+        imageView.frame = CGRectMake(0, 0, 45, 45);
+        cell.accessoryView = imageView
         cell.detailTextLabel?.textColor = UIColor(white: 0.1, alpha: 0.3)
         cell.detailTextLabel?.text = notes[indexPath.row].id
 
