@@ -32,7 +32,6 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.whiteColor()
-        searchBar.becomeFirstResponder()
         if !keyword.isEmpty {
             searchBar.text = keyword
             request(keyword)
