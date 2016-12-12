@@ -78,7 +78,7 @@ extension CategoryViewController: UITableViewDataSource {
 }
 
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDelegate
 extension CategoryViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let searchViewController = SearchViewController(keyword: category[indexPath.row])

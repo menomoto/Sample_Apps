@@ -109,7 +109,7 @@ extension FavoriteViewController: UITableViewDataSource {
 
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDelegate
 extension FavoriteViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let videoViewController = VideoViewController(video: videos[indexPath.row])
@@ -118,5 +118,18 @@ extension FavoriteViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 64
+    }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.editing = editing
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let userDefaultsManager = UserDefaultsManager(userDefaultKey: "Favorites")
+        userDefaultsManager.delete(videos[indexPath.row].videoId)
+        videos.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
     }
 }

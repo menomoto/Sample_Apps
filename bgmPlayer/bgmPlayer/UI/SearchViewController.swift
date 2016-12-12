@@ -137,7 +137,7 @@ extension SearchViewController: UITableViewDataSource {
 
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDelegate
 extension SearchViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let videoViewController = VideoViewController(video: videos[indexPath.row])
