@@ -57,7 +57,6 @@ class CategoryViewController: UIViewController {
     private func addConstraints() {
         tableView.autoPinEdgesToSuperviewEdges()
     }
-    
 }
 
 
@@ -71,6 +70,8 @@ extension CategoryViewController: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier( String(UITableViewCell) ) {
             cell.textLabel?.text = category[indexPath.row]
+            cell.accessoryType = .DisclosureIndicator
+
             return cell
         }
         return UITableViewCell()
@@ -86,6 +87,6 @@ extension CategoryViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 32
+        return CGFloat(Constants.categoryTableViewCellHeight)
     }
 }

@@ -68,7 +68,7 @@ class SearchViewController: UIViewController {
         searchBar.autoPinToTopLayoutGuideOfViewController(self, withInset: 0)
         searchBar.autoPinEdgeToSuperviewEdge(.Left)
         searchBar.autoPinEdgeToSuperviewEdge(.Right)
-        
+
         tableView.autoPinEdge(.Top, toEdge: .Bottom, ofView: searchBar)
         tableView.autoPinEdgeToSuperviewEdge(.Left)
         tableView.autoPinEdgeToSuperviewEdge(.Right)
@@ -145,6 +145,6 @@ extension SearchViewController: UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 64
+        return CGFloat(Constants.searchTableViewCellHeight)
     }
 }

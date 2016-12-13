@@ -1,6 +1,10 @@
+import Foundation
+
 struct Constants
 {
-    static let apiKey = "<api key>"
+    static let apiKey = ""
+    static let searchTableViewCellHeight = 92
+    static let categoryTableViewCellHeight = 48
     
     static let searchUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&key=\(Constants.apiKey)&q=bgm+"
     

@@ -115,7 +115,7 @@ extension HistoryViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 64
+        return CGFloat(Constants.searchTableViewCellHeight)
     }
     
     override func setEditing(editing: Bool, animated: Bool) {

@@ -34,12 +34,13 @@ class SearchTableViewCell: UITableViewCell {
         contentView.addSubview(watchButton)
     }
     
-    private func configureSubviews() {}
+    private func configureSubviews() {
+    }
     
     private func addConstraints() {
         itemImageView.autoPinEdgeToSuperviewEdge(.Top, withInset: 2.0)
         itemImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: 2.0)
-        itemImageView.autoSetDimensionsToSize(CGSize(width: 320/3, height: 180/3))
+        itemImageView.autoSetDimensionsToSize(CGSize(width: 320/2, height: 180/2))
 
         titleLabel.autoPinEdge(.Leading, toEdge: .Trailing, ofView: itemImageView, withOffset: 3.0)
         titleLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: 5.0)
